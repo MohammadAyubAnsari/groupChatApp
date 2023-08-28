@@ -1,9 +1,9 @@
 async function login(event) {
   try {
     event.preventDefault();
-    loginCredentials = {
-      Email: event.target.email.value,
-      Password: event.target.password.value,
+    loginDetials = {
+      email: event.target.email.value,
+      password: event.target.password.value,
     };
 
     document.getElementById("email").value = "";
@@ -11,12 +11,14 @@ async function login(event) {
 
     const response = await axios.post(
       "http://localhost:3000/user/login",
-      loginCredentials,
+      loginDetials,
       { Credentials: "include" }
     );
+
     if (response.status === 201) {
       alert(response.data.message);
-      console.log(response.data);
+      console.log(response.data.message);
+      localStorage.setItem("token", response.data.message);
     } else {
       throw new Error(" Failed to Login");
     }

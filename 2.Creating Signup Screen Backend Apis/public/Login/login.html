@@ -21,8 +21,8 @@
   </head>
   <body>
     <div class="container">
-      <h2>Login</h2>
       <form class="my-form" onsubmit="login(event)">
+        <h2 class="text-center">Login</h2>
         <div class="form-floating form-group">
           <input
             type="email"
@@ -44,6 +44,11 @@
             required
           />
           <label for="password" class="form-label">Password</label>
+        </div>
+        <div class="form-group">
+          <a href="../forgotPassword/forgotPassword.html">
+            Forgot password ?
+          </a>
         </div>
         <button class="btn btn-primary">Login</button>
       </form>
