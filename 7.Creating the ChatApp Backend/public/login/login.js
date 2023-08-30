@@ -20,6 +20,7 @@ async function login(event) {
       console.log(response.data.message);
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("userName", response.data.name);
+      localStorage.setItem("userName", response.data.email);
       window.location.href = "../group/group.html";
     } else {
       throw new Error(" Failed to Login");
