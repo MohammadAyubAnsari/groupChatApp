@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 require("dotenv").config();
-const sequalize = require("./util/database");
+const sequelize = require("./util/database");
 const errorController = require("./controllers/error");
 
 const app = express();
@@ -38,7 +38,7 @@ app.use(errorController.get404);
 
 // {force : true}
 
-sequalize
+sequelize
   .sync()
   .then((result) => {
     app.listen(process.env.PORT);
